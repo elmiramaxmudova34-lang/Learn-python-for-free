@@ -12,7 +12,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 // Zarrachalar (Particles) yaratish
 const geometry = new THREE.BufferGeometry();
-const count = 4000; // Ko'proq zarracha uchun 4000 ta
+const count = 8000; // Ko'proq zarracha uchun 4000 ta
 const posArray = new Float32Array(count * 3);
 
 for(let i = 0; i < count * 3; i++) {
