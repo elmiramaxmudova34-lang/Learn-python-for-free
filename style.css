@@ -15,7 +15,7 @@
 
 body {
     /* FREEEPIK FONI BU YERDA */
-    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
     background-attachment: fixed; 
     color: #fff;
     font-family: 'Roboto Mono', monospace;
