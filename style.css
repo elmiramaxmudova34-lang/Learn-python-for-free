@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap');
+
+:root {
+    --primary: #00f3ff; /* Neon Cyan */
+    --secondary: #bd00ff; /* Neon Purple */
+    --bg-color: #050505;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* FREEEPIK FONI BU YERDA */
+    background: url('assets/hero-bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; 
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Rasm ustidan qora Overlay, yozuvlar yaxshi o'qilishi uchun */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.8); /* 80% qora qatlam */
+    z-index: -2;
+}
+
+/* 3D Particle Canvas (Zarrachalar) */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    opacity: 0.9;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
+}
+
+/* Hero Section va Umumiy Section uslubi */
+section {
+    min-height: 100vh;
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+h1.glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    position: relative;
+    color: white;
+    text-shadow: 0 0 10px var(--primary);
+}
+
+#typewriter {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 20px 0;
+    height: 30px;
+    text-shadow: 0 0 5px var(--primary);
+}
+
+.btn-neon {
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 0 10px var(--primary);
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.btn-neon:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 40px var(--primary);
+}
+
+/* Code Showcase Section */
+#code {
+    min-height: 80vh; /* Kichikroq bo'lishi mumkin */
+}
+.code-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.code-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--glass);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+    transition: transform 0.5s;
+    max-width: 500px;
+}
+
+.code-card:hover {
+    transform: scale(1.05);
+}
+
+.code-img {
+    width: 100%;
+    display: block;
+    filter: contrast(1.1);
+}
+
+.code-desc {
+    max-width: 400px;
+    padding: 20px;
+    background: var(--glass);
+    border-radius: 15px;
+}
+
+.code-desc h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 2rem;
+    text-shadow: 0 0 5px var(--secondary);
+}
+
+.stats span {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    background: var(--glass);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.project-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-btn {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid;
+}
+
+.contact-btn i {
+    margin-right: 10px;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px;
+}
+
+.contact-btn:not(.telegram) { /* GitHub uchun */
+    border-color: #ffffff;
+    color: #ffffff;
+    box-shadow: 0 0 10px #ffffff44;
+}
+
+.contact-btn.telegram {
+    border-color: #0088cc;
+    color: #0088cc;
+    box-shadow: 0 0 10px #0088cc88;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav { padding: 20px 20px; }
+    h1.glitch { font-size: 3rem; }
+    .code-container { flex-direction: column; }
+    .section-title { font-size: 2rem; }
+    .contact-links { flex-direction: column; gap: 15px; }
+}
